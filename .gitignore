@@ -1,0 +1,19 @@
+# Only the public manuscript package is tracked.
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/CITATION.cff
+!/build.sh
+!/SHA256SUMS
+!/paper/
+/paper/*
+!/paper/weighted-reciprocal-growth.tex
+!/output/
+/output/*
+!/output/pdf/
+/output/pdf/*
+!/output/pdf/weighted-reciprocal-growth.pdf
+!/verification/
+/verification/*
+!/verification/audit-summary.json

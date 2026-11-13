@@ -1,0 +1,432 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{
+  pdftitle={A sqrt(3) growth criterion for weighted reciprocal series},
+  pdfauthor={twinheterodox},
+  pdfsubject={Irrationality under irregular growth for reciprocal products with weights (2,1)},
+  pdfcreator={LaTeX}
+}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\numberwithin{equation}{section}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\title{A $\sqrt{3}$ growth criterion for weighted reciprocal series}
+\author{twinheterodox\\[2pt]\normalsize Prepared with Codex}
+\date{13 November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove that $\sum_{n\ge1}1/(a_n^2a_{n+1})$ is irrational for every
+strictly increasing sequence of positive integers satisfying
+\[
+  \limsup_{n\to\infty}\frac{\log a_n}{(\sqrt3)^n}=\infty.
+\]
+This lowers the sufficient growth base from $2$ to $\sqrt3$ in the
+criterion of Barreto, Kang, Kim, Kova\v{c} and Zhang
+\cite[Theorem~3]{BKKKZ} for weights $(2,1)$.
+Irregular growth is allowed. The result also extends to nondecreasing
+sequences and positive integer numerators subject to polynomial size
+bounds.
+\end{abstract}
+
+\section{Introduction}
+
+Growth criteria for irrationality ask how fast an integer sequence must
+grow before an associated reciprocal series is forced to have an
+irrational sum. Such a criterion applies to entire families of sums,
+without a closed form for the sum or information about the prime factors
+of the sequence. The underlying constraint is arithmetic: a rational
+partial sum cannot approach a different rational number more closely
+than their denominators permit.
+
+Barreto, Kang, Kim, Kova\v{c} and Zhang \cite{BKKKZ} answered a question
+of Erd\H{o}s and Graham \cite[p.~64]{ErdosGraham} about reciprocal
+products of successive sequence terms and developed criteria for
+more general products
+$a_n^{w_0}\cdots a_{n+d-1}^{w_{d-1}}$. When some weights exceed one,
+their sufficient growth condition and their rational examples can
+leave a gap \cite[Section~5]{BKKKZ}. We improve the sufficient
+condition for the two adjacent factors with weights $(2,1)$.
+
+\begin{theorem}\label{thm:strict}
+Let $(a_n)_{n\ge1}$ be a strictly increasing sequence of positive
+integers. If
+\begin{equation}\label{eq:growth}
+  \limsup_{n\to\infty}\frac{\log a_n}{(\sqrt3)^n}=\infty,
+\end{equation}
+then
+\[
+  \sum_{n=1}^{\infty}\frac{1}{a_n^2a_{n+1}}
+\]
+is irrational.
+\end{theorem}
+
+All logarithms are natural. Condition~\eqref{eq:growth} is equivalent
+to $\limsup_{n\to\infty}a_n^{1/(\sqrt3)^n}=\infty$. It requires large
+values along a subsequence; it imposes no limit on the ratios of
+successive logarithms.
+
+\subsection{Comparison with the earlier bound}
+
+For weights $(2,1)$, the polynomial in \cite[Theorem~3]{BKKKZ} is
+\[
+  (x-1)(2+x)-2x=x^2-x-2,
+\]
+whose positive root is $2$. That theorem therefore requires
+$\limsup a_n^{1/2^n}=\infty$. Theorem~\ref{thm:strict} replaces $2$ by
+$\sqrt3$, and hence applies under a weaker growth condition.
+For unit numerators, the base-$2$ condition also follows from
+Erd\H{o}s's criterion \cite[Theorem~1]{Erdos1975}, applied to
+$x_n=a_n^2a_{n+1}$.
+
+For a concrete comparison, suppose $\log a_n\sim\lambda^n$. The new
+criterion applies for every $\lambda>\sqrt3$, whereas the earlier
+criterion requires $\lambda>2$ within this family. In particular,
+\[
+  a_n=\left\lceil\exp\bigl((9/5)^n\bigr)\right\rceil
+\]
+is covered by Theorem~\ref{thm:strict}, while
+$a_n^{1/2^n}\to1$. The same theorem also covers sequences whose growth
+is irregular; the proof must allow long stretches of slower growth
+between the large values supplied by \eqref{eq:growth}.
+
+The rational examples in \cite[Theorem~5]{BKKKZ} are governed here by
+\[
+  (x-1)(2+x)-x=x^2-2.
+\]
+For every $C>1$, that theorem gives a strictly increasing integer
+sequence for which $a_n^{1/(\sqrt2)^n}\to C$ and the reciprocal series
+has a rational sum. Thus the sufficient base is now $\sqrt3$, while
+the rational constructions occur at $\sqrt2$. The optimal threshold
+remains open.
+
+\subsection{A general form}
+
+We prove a version that also permits repetitions in $(a_n)$ and
+positive integer numerators.
+
+\begin{theorem}\label{thm:general}
+Let $(a_n)_{n\ge1}$ be nondecreasing positive integers and let
+$(b_n)_{n\ge1}$ be positive integers. Suppose that, for some real
+$0\le\eta<\tau$, one has
+\begin{equation}\label{eq:size}
+  b_n\le n^\eta,\qquad a_n^2a_{n+1}\ge n^{1+\tau}
+\end{equation}
+for all sufficiently large $n$. If \eqref{eq:growth} holds, then the
+convergent series
+\begin{equation}\label{eq:series}
+  S=\sum_{n=1}^{\infty}\frac{b_n}{a_n^2a_{n+1}}
+\end{equation}
+is irrational.
+\end{theorem}
+
+Theorem~\ref{thm:strict} follows by taking $b_n=1$, $\eta=0$ and
+$\tau=2$, since strict increase gives $a_n\ge n$.
+The size assumptions in Theorem~\ref{thm:general} are the same type
+as those in \cite[Theorem~3]{BKKKZ}: they give a uniform bound for
+tails even where growth is slow.
+
+\subsection{The source of \texorpdfstring{$\sqrt3$}{sqrt(3)}} 
+
+The improvement begins with the denominator of a partial sum.
+The first three terms of \eqref{eq:series} have denominators
+\[
+  a_1^2a_2,\qquad a_2^2a_3,\qquad a_3^2a_4.
+\]
+Their sum is cleared by $a_1^2a_2^2a_3^2a_4$: only the first power
+of the last factor is needed. For the first $N$ terms, the corresponding
+common denominator is
+\begin{equation}\label{eq:clearer}
+  D_N=\left(\prod_{i=1}^N a_i^2\right)a_{N+1}.
+\end{equation}
+Writing $u_n=\log a_n$ and $V_n=\sum_{i=1}^n u_i$, we obtain
+\begin{equation}\label{eq:endpoint}
+  \log\frac{D_N}{a_{N+1}^2a_{N+2}}=3V_N-V_{N+2}.
+\end{equation}
+The relation $V_{N+2}=3V_N$ has growth scale $(\sqrt3)^N$.
+This explains the base in the theorem.
+
+Identity~\eqref{eq:endpoint} only compares the common denominator with
+the first omitted term. For irregular growth, the rest of the tail
+need not be negligible. We adapt the tail estimates and the argument
+for selecting a peak after a slow index in
+\cite[Lemmas~9--11 and Proposition~12]{BKKKZ}. These build on the
+tail and peak arguments of Erd\H{o}s \cite[pp.~3--6]{Erdos1975}.
+The two changes are the endpoint denominator \eqref{eq:clearer} and
+the use of peaks of the cumulative logarithms $V_n$. These changes
+preserve the saving in \eqref{eq:endpoint} while controlling the entire
+tail. We give all the required estimates below.
+
+\section{Two uniform tail estimates}\label{sec:tails}
+
+The proof uses a coarse estimate valid everywhere and a sharper estimate
+on intervals of fast growth. The endpoints of those intervals will be
+chosen later, so the constants must be independent of them. The following
+estimates adapt \cite[Lemma~10]{BKKKZ}; the corresponding bounds with
+unit numerators appear in \cite[pp.~3--4]{Erdos1975}.
+
+\begin{lemma}\label{lem:tails}
+Let $(x_n)$ be a nondecreasing sequence of positive real numbers and let
+$0\le y_n\le n^\eta$. Fix $0\le\eta<\tau$, $c_0>0$ and a positive
+integer $A$.
+\begin{enumerate}
+\item If $x_n\ge c_0 n^{1+\tau}$ for every $n\ge A$ and $X=x_A\ge1$,
+then
+\begin{equation}\label{eq:polytail}
+  \sum_{n\ge A}\frac{y_n}{x_n}
+  \le C_{\mathrm{pol}}X^{-\alpha},
+  \qquad \alpha=\frac{\tau-\eta}{1+\tau}>0.
+\end{equation}
+The constant $C_{\mathrm{pol}}$ depends only on $\eta,\tau,c_0$.
+\item If $x_n\ge e^n$ for $A\le n\le B$, where $B\ge A$ is an integer
+or $B=\infty$, then
+\begin{equation}\label{eq:exptail}
+  \sum_{n=A}^{B}\frac{y_n}{x_n}
+  \le C_{\mathrm{exp}}\frac{(\log x_A)^{1+\eta}}{x_A}.
+\end{equation}
+The constant $C_{\mathrm{exp}}$ depends only on $\eta$.
+\end{enumerate}
+Neither constant depends on the endpoints or on the particular
+sequences.
+\end{lemma}
+
+\begin{proof}
+Put $X=x_A$ and group the relevant indices according to
+$2^jX\le x_n<2^{j+1}X$, for $j\ge0$.
+In the first case, every index in the $j$th group is at most
+$(2^{j+1}X/c_0)^{1/(1+\tau)}$. Since $\eta\ge0$, summing $n^\eta$
+up to this bound shows that the group's contribution is at most
+\[
+  C\,\frac{(2^{j+1}X)^{(1+\eta)/(1+\tau)}}{2^jX}.
+\]
+The sum over $j$ is geometric with ratio $2^{-\alpha}<1$, proving
+\eqref{eq:polytail}.
+
+In the second case, every index in the $j$th group is at most
+$\log X+(j+1)\log2$. Its contribution is therefore at most
+\[
+  C\,\frac{(\log X+j+1)^{1+\eta}}{2^jX}.
+\]
+Here $\log X\ge A\ge1$. Summing the convergent series
+$\sum_{j\ge0}(j+2)^{1+\eta}/2^j$ proves \eqref{eq:exptail}.
+The same bounds apply when an interval ends partway through a group.
+\end{proof}
+
+\section{Proof of Theorem~\ref{thm:general}}\label{sec:proof}
+
+\subsection{What rationality would force}
+
+Write
+\[
+  x_n=a_n^2a_{n+1},\qquad
+  T_N=\sum_{n>N}\frac{b_n}{x_n}.
+\]
+The series converges because \eqref{eq:size} bounds its terms by
+$n^{-1-(\tau-\eta)}$ for all large $n$.
+We use the elementary criterion in \cite[Lemma~8]{BKKKZ}.
+Suppose, for a contradiction, that $S=p/q$ with $q$ a positive integer.
+The integer $D_N$ in \eqref{eq:clearer} clears each term of the partial
+sum through $N$. Thus $qD_NT_N$ is a positive integer, and
+\begin{equation}\label{eq:integerlower}
+  D_NT_N\ge\frac1q\qquad(N\ge1).
+\end{equation}
+We will find indices at which this same cleared tail tends to zero.
+
+Retain $u_n=\log a_n$ and $V_n=\sum_{i=1}^n u_i$, with $V_0=0$, and put
+\begin{equation}\label{eq:EF}
+  E_N=\log D_N=V_N+V_{N+1},\qquad
+  F_N=\log x_{N+1}=2u_{N+1}+u_{N+2}.
+\end{equation}
+The endpoint identity becomes
+\begin{equation}\label{eq:EFidentity}
+  E_N-F_N=3V_N-V_{N+2}.
+\end{equation}
+
+By \eqref{eq:polytail}, with $c_0=1$ and
+$\alpha=(\tau-\eta)/(1+\tau)$, the full tail satisfies
+$T_N\le C_{\mathrm{pol}}e^{-\alpha F_N}$ for all large $N$.
+Combining this with \eqref{eq:integerlower} gives
+\[
+  \alpha F_N\le E_N+\log(C_{\mathrm{pol}}q).
+\]
+Monotonicity and \eqref{eq:size} imply $a_n\to\infty$, so $E_N\to\infty$.
+Consequently, for all sufficiently large $N$,
+\begin{equation}\label{eq:jump}
+  F_N\le\frac{2}{\alpha}E_N,\qquad
+  E_{N+1}\le H E_N,\qquad H=1+\frac{2}{\alpha}.
+\end{equation}
+Indeed, $E_{N+1}-E_N=u_{N+1}+u_{N+2}\le F_N$.
+
+The bound \eqref{eq:jump} is deliberately coarse. Under the assumption
+of rationality, it prevents a slow index from being followed immediately
+by an uncontrolled jump. It also gives $E_N=O(H^N)$ and hence
+\begin{equation}\label{eq:logF}
+  \log(F_N+1)=O(N+1).
+\end{equation}
+All constants from this point may depend on the fixed sequences,
+$\eta,\tau$ and the hypothetical denominator $q$, but not on the
+indices that will be selected.
+
+\subsection{Eventual exponential growth}
+
+Set $c=\sqrt3$ and $W_n=V_n/c^n$. Suppose first that $a_n\ge e^n$
+for every sufficiently large $n$. Then $x_n\ge e^n$ there, and
+\eqref{eq:exptail} applied to the whole tail gives
+\[
+  T_N\le C_{\mathrm{exp}}F_N^{1+\eta}e^{-F_N}.
+\]
+Using \eqref{eq:integerlower}, \eqref{eq:EFidentity} and \eqref{eq:logF},
+we obtain
+\[
+  V_{N+2}\le 3V_N+(1+\eta)\log F_N+O(1)
+           \le 3V_N+C(N+1)
+\]
+for a fixed $C>0$ and all large $N$. Since $c^2=3$,
+\[
+  W_{N+2}\le W_N+\frac{C(N+1)}{c^{N+2}}.
+\]
+The errors have a finite sum on each parity class. Iterating separately
+on the even and odd indices therefore bounds $W_n$.
+But $V_n\ge u_n$, so this contradicts \eqref{eq:growth}.
+
+\subsection{A first peak after a slow index}
+
+It remains to treat sequences with $a_n<e^n$ at infinitely many
+indices. We will split a tail inside a fast stretch. A first peak
+will control the near part, and a later large value will control the
+part beyond the stretch.
+
+Choose increasing indices $R$ such that
+\begin{equation}\label{eq:mu}
+  \mu_R=\frac{u_R}{c^R}\longrightarrow\infty.
+\end{equation}
+For large $R$, these indices are fast: $a_R\ge e^R$.
+Let $P=P(R)<R$ be the last index before $R$ with $a_P<e^P$.
+It exists for all large $R$. For every fixed slow index $t$, the
+selected $R$ eventually exceed $t$, and then $P(R)\ge t$. Since
+the slow indices are unbounded, $P(R)\to\infty$. By definition,
+\begin{equation}\label{eq:faststretch}
+  a_n\ge e^n\qquad(P<n\le R).
+\end{equation}
+
+Monotonicity gives $V_P\le P u_P<P^2$ and $E_{P-1}\le2P^2$.
+For all large $P$, \eqref{eq:jump} therefore yields
+\[
+  V_{P+1}\le E_P\le2H P^2.
+\]
+It follows that $W_P<1$ and $W_{P+1}<1$. On the other hand,
+$W_R\ge\mu_R\to\infty$, so $R\ge P+2$ eventually.
+
+We need a peak that produces a definite saving in
+\eqref{eq:EFidentity}, while keeping the earlier denominator under
+control. Let $L=e^2$ and choose the first $Q\in[P+2,R]$ such that
+\begin{equation}\label{eq:peak}
+  W_Q>(1+Q^{-2})\max(1,W_P,\ldots,W_{Q-1}).
+\end{equation}
+Such a $Q$ exists for all large selected $R$. Otherwise the successive
+running maxima, starting from $1$, could increase only by the factors
+$1+j^{-2}$, and would remain at most
+\[
+  \prod_{j\ge1}(1+j^{-2})
+  \le\exp\left(\sum_{j\ge1}j^{-2}\right)\le L.
+\]
+This contradicts $W_R\ge\mu_R\to\infty$.
+The summable-increment argument appears in \cite[p.~4]{Erdos1975};
+we follow its use for weighted series in
+\cite[Lemma~9 and Proposition~12]{BKKKZ}.
+
+Because $Q$ is the first such peak,
+\begin{equation}\label{eq:beforepeak}
+  W_j\le L\quad(P\le j<Q),\qquad
+  E_{Q-2}=V_{Q-2}+V_{Q-1}\le2Lc^Q.
+\end{equation}
+Also $V_Q>c^Q$, and comparison with $Q-2$ in \eqref{eq:peak} gives
+\begin{equation}\label{eq:saving}
+  E_{Q-2}-F_{Q-2}=3V_{Q-2}-V_Q
+  \le-\frac{V_Q}{Q^2+1}
+  \le-\frac{c^Q}{Q^2+1}.
+\end{equation}
+Here $Q-2\ge P$, so the earlier index is included in the maximum.
+Moreover, $Q\to\infty$ because $Q\ge P+2$.
+
+\subsection{Both parts of the cleared tail tend to zero}
+
+Split the tail after $Q-2$ as
+\begin{equation}\label{eq:split}
+  D_{Q-2}T_{Q-2}
+  =D_{Q-2}\sum_{n=Q-1}^{R}\frac{b_n}{x_n}
+   +D_{Q-2}T_R.
+\end{equation}
+The bound on $E_{Q-2}$ in \eqref{eq:beforepeak} has two uses: it
+controls the logarithmic factor in the near-tail estimate, and it
+limits the clearing cost for the far tail.
+
+For the near part, \eqref{eq:faststretch} gives $x_n\ge e^n$
+throughout $Q-1\le n\le R$. By \eqref{eq:jump} and
+\eqref{eq:beforepeak},
+\[
+  F_{Q-2}\le\frac{2}{\alpha}E_{Q-2}
+          \le\frac{4L}{\alpha}c^Q.
+\]
+The finite-interval bound \eqref{eq:exptail} and
+\eqref{eq:saving} now give
+\begin{align}
+  \log\left(D_{Q-2}\sum_{n=Q-1}^{R}\frac{b_n}{x_n}\right)
+  &\le E_{Q-2}-F_{Q-2}+(1+\eta)\log F_{Q-2}+O(1)\notag\\
+  &\le-\frac{c^Q}{Q^2+1}+(1+\eta)Q\log c+O(1)
+       \longrightarrow-\infty. \label{eq:near}
+\end{align}
+The constants are independent of the moving endpoints $P,Q,R$.
+
+For the far part, use \eqref{eq:polytail} and
+$x_{R+1}=a_{R+1}^2a_{R+2}\ge a_R^3$. Together with $Q\le R$,
+\eqref{eq:beforepeak} and \eqref{eq:mu}, this gives
+\begin{align}
+  D_{Q-2}T_R
+  &\le C_{\mathrm{pol}}\exp(E_{Q-2}-\alpha\log x_{R+1})\notag\\
+  &\le C_{\mathrm{pol}}\exp(2Lc^Q-3\alpha u_R)\notag\\
+  &\le C_{\mathrm{pol}}\exp\bigl((2L-3\alpha\mu_R)c^R\bigr)
+       \longrightarrow0. \label{eq:far}
+\end{align}
+Thus both terms in \eqref{eq:split} tend to zero along the same
+selected indices. This contradicts \eqref{eq:integerlower} and
+proves Theorem~\ref{thm:general}, hence also
+Theorem~\ref{thm:strict}. \qed
+
+\section*{Verification}
+
+An independent mathematical audit (13 November 2026) found no error or
+missing hypothesis in the underlying proof. This was not formal verification.
+
+\begin{thebibliography}{9}
+\bibitem{BKKKZ}
+K.~Barreto, J.~Kang, S.-h.~Kim, V.~Kova\v{c} and S.~Zhang,
+\emph{Irrationality of rapidly converging series: A problem of
+Erd\H{o}s and Graham},
+Bull.\ Lond.\ Math.\ Soc.\ \textbf{58} (2026), no.~8, e70457.
+\href{https://doi.org/10.1112/blms.70457}{doi:10.1112/blms.70457}.
+\href{https://arxiv.org/abs/2601.21442v3}{arXiv:2601.21442v3}.
+
+\bibitem{Erdos1975}
+P.~Erd\H{o}s,
+\emph{Some problems and results on the irrationality of the sum of
+infinite series},
+J.\ Math.\ Sci.\ \textbf{10} (1975), 1--7.
+\href{https://www.renyi.hu/~p_erdos/1976-44.pdf}{Full text}.
+
+\bibitem{ErdosGraham}
+P.~Erd\H{o}s and R.~L.~Graham,
+\emph{Old and new problems and results in combinatorial number theory},
+Monographies de L'Enseignement Math\'ematique, vol.~28,
+Universit\'e de Gen\`eve, L'Enseignement Math\'ematique, Geneva, 1980.
+\href{https://mathweb.ucsd.edu/~ronspubs/80_11_number_theory.pdf}{Full text}.
+\end{thebibliography}
+
+\end{document}

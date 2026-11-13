@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript when using this result."
+title: "A √3 growth criterion for weighted reciprocal series"
+authors:
+  - name: twinheterodox
+date-released: 2026-11-13
+url: "https://github.com/twinheterodox/weighted-reciprocal-growth"
+license: Apache-2.0
+preferred-citation:
+  type: article
+  title: "A √3 growth criterion for weighted reciprocal series"
+  authors:
+    - name: twinheterodox
+  year: 2026
+  url: "https://github.com/twinheterodox/weighted-reciprocal-growth"

@@ -1,0 +1,36 @@
+{
+  "description": "Public summary of the mathematical reviews; not a verbatim audit report.",
+  "independent_proof_audit": {
+    "date": "2026-11-13",
+    "outcome": "PASS: no mathematical error or missing hypothesis found in the general theorem; the strictly increasing special case follows.",
+    "reviewed_proof_sha256": "a1fdc5a055e47dab84d1b4e1b79efacb5186b587dadb0042f7e895110bfe6ee1",
+    "checks": [
+      "Endpoint common denominator and exact cumulative-logarithm identity",
+      "Polynomial and exponential tail estimates with constants uniform in moving endpoints",
+      "Jump bound forced by rationality",
+      "First peak after a slow index and divergence of all selected indices",
+      "Near and far parts of the same cleared tail both tending to zero",
+      "Comparison with the cited sufficient base 2 and rational constructions at base sqrt(2)"
+    ],
+    "independence": "The auditor recorded mathematical conclusions before consulting the earlier cooperating-session reviews.",
+    "scope": "Analytic proof audit, not formal verification, a sharpness result, or an exhaustive priority assessment. No numerical certificate is required."
+  },
+  "manuscript_review": {
+    "date": "2026-11-13",
+    "outcome": "PASS in separate correctness and exposition reviews by a cooperating research session.",
+    "reviewed_source_sha256": "c9e900a6b78db2eb4034359ec0ecce775cca721b9aa46a8c8ea53cacdb8c07ad",
+    "scope": "Complete manuscript source, including its original series indexing and equivalent recurrence argument for eventual exponential growth. Distinct from the independent audit of the underlying proof."
+  },
+  "subsequent_editorial_changes": [
+    "Added direct citations to Erdos (1975) and Erdos-Graham (1980), with precise methodological pointers and the classical base-2 comparison for unit numerators.",
+    "Shortened the Verification section to two sentences."
+  ],
+  "current_manuscript": {
+    "source": "paper/weighted-reciprocal-growth.tex",
+    "source_sha256": "e6be0f12005ed1cc53bb16c453ceb158ad74f821f3477be49932d0527c8f9399",
+    "pdf": "output/pdf/weighted-reciprocal-growth.pdf",
+    "pdf_sha256": "9322063aaff5b089eac2e5277615e69977b1c2def9d3af3dd1dca16acc58cb44",
+    "pages": 6,
+    "assembly_checks": "The mathematical statements and proof are unchanged by the editorial revisions. The PDF builds without warnings; all six pages were visually checked."
+  }
+}
