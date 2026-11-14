@@ -1,6 +1,6 @@
 {
-  "description": "Public summary of cooperating-session reviews, not a verbatim private review archive.",
-  "outcome": "PASS in two complete manuscript-source reviews, with correctness and human exposition assessed separately.",
+  "description": "Public summary of an independent proof audit and the earlier cooperating-session reviews; not a verbatim private audit archive.",
+  "outcome": "PASS in the independent audit of the full general family and in the earlier cooperating-session reviews.",
   "review_date": "2026-11-13",
   "reviewed_full_manuscript_sha256": "a2ba5c457feaf89b463f001a2b378952c9e7669a9ec9bf9c633babb29c140627",
   "reviewed_general_proof_sha256": "523f7d74ba3cd7152569e3f93c2cef2d6ffa094734b90a4adf3346c63ab088f7",
@@ -21,21 +21,40 @@
   "subsequent_editorial_changes": [
     "Moved the finite-product interpretation before its proof; both cooperating sessions confirmed the finite source diff.",
     "Removed the forced title line break.",
-    "Replaced the earlier-paper repository citation with its full published Hexagon 2611.00428v1 citation."
+    "Replaced the earlier-paper repository citation with its full published Hexagon 2611.00428v1 citation.",
+    "After the independent audit, explicitly labeled the previous-base table column min(rho_w,2).",
+    "Updated the short Verification note to report the independent audit."
   ],
   "current_manuscript": {
     "source": "paper/weighted-family-growth.tex",
-    "source_sha256": "4340714ad4aa6841cd9f2921fe9c178dd6d68ef9ffd2e4f43e74d2006151d113",
+    "source_sha256": "82cc49c80d3c8f98ce0438da52e884eae12f4b8518b6e36b181c73830c24fb6a",
     "pdf": "output/pdf/weighted-family-growth.pdf",
-    "pdf_sha256": "26eca1be56ae4276f970bcd76c7edc1d053eb22ffc063960745180a87c7304e5",
+    "pdf_sha256": "8e63fb89e2748aa5e3298502305377d3aa8da87a06f813417c0bee358b827d65",
     "pages": 9,
-    "assembly_checks": "The exact final source diff and all nine rendered pages were checked. The final title/citation revision leaves the mathematical body byte-identical to the peer-confirmed version. The build has no warnings or unresolved references."
+    "assembly_checks": "Exact source diff contains only the previous-base table heading and the short Verification note; all theorem statements and proofs are unchanged. The PDF has nine pages and builds without warnings. Pages 2 and 8 were visually checked; the other seven pages are pixel-identical to the independently audited PDF."
   },
   "limits": [
-    "Cooperating-session mathematical review, not a fresh external independent audit",
-    "Not formal verification",
-    "Not an exhaustive priority assessment or a sharpness claim",
-    "The independent audit of the earlier two-weight paper is not an audit of this general theorem"
+    "Neither the independent audit nor the cooperating-session reviews are formal verification.",
+    "No exhaustive priority assessment or sharpness claim.",
+    "This independent audit covers the full generalization; it is distinct from the earlier two-weight paper audit."
   ],
-  "numerical_dependencies": "None: the proof is self-contained and has no finite numerical certificate inputs."
+  "numerical_dependencies": "None: the proof is self-contained and has no finite numerical certificate inputs.",
+  "independent_audit": {
+    "completed_local_date": "2026-11-13",
+    "completed_utc": "2026-11-14T03:52:55.280197+00:00",
+    "outcome": "PASS: no mathematical gap, missing hypothesis or unresolved uniformity issue in Theorems 1.1-1.2 or Propositions 4.1-4.2.",
+    "audited_source_sha256": "4340714ad4aa6841cd9f2921fe9c178dd6d68ef9ffd2e4f43e74d2006151d113",
+    "audited_pdf_sha256": "26eca1be56ae4276f970bcd76c7edc1d053eb22ffc063960745180a87c7304e5",
+    "report_sha256": "e8e3dc1249cdcaa2cd0919346c99fb645e9d0145fe50ded19a48ea6157dbd330",
+    "independent_conclusions_sha256": "e141136ba642ddca5ffb2cf88e0ea4929fd825c057747a096cd9d813a4c58607",
+    "independence": "The auditor recorded conclusions before opening the earlier review summary.",
+    "scope": "All nine PDF pages and the accompanying TeX; endpoint arithmetic, strictly positive factorization, uniform tail and jump estimates, first-peak and forward-shift arguments, both parts of the same cleared tail, root and staircase comparisons, and finite-product substitutions.",
+    "sources_checked": "BKKKZ v3 Theorem 3, Remark 4, Theorem 5, Lemmas 8-11, Proposition 12 and Section 5; relevant portions of the original Erdos paper, including visual formula checks.",
+    "limits": [
+      "Not formal verification or an exhaustive literature/priority assessment.",
+      "The full rational-construction proof in BKKKZ Theorem 5 and complete historical papers were not independently re-proved.",
+      "The original Erdos-Graham book page 64 was not directly inspected; its attribution was corroborated by BKKKZ.",
+      "The auditor could not access the live Hexagon record; that publication citation was separately verified during manuscript preparation."
+    ]
+  }
 }

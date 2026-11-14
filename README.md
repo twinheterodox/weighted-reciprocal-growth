@@ -72,7 +72,7 @@ Each script runs pdfLaTeX three times and writes the corresponding file under `o
 
 ## Verification
 
-Two cooperating Codex sessions separately reviewed the complete general-weight proof and manuscript for correctness and exposition. The [general-weight review summary](verification/weighted-family-review-summary.json) identifies the reviewed versions and subsequent presentation changes. No fresh external audit of that generalization is claimed.
+An independent audit of all nine pages found no mathematical gap in Theorems 1.1–1.2 or Propositions 4.1–4.2. The auditor recorded conclusions before consulting the earlier cooperating-session reviews. Two cooperating Codex sessions had also separately reviewed the complete proof and manuscript for correctness and exposition. The [general-weight review summary](verification/weighted-family-review-summary.json) distinguishes these checks, identifies the exact audited versions and records the subsequent table-heading clarification.
 
 For the earlier √3 paper, an independent mathematical audit on 13 November 2026 found no error or missing hypothesis in the underlying proof. A separate review checked its presentation. Its [audit summary](verification/audit-summary.json) distinguishes those scopes. None of these reviews is formal verification; neither proof requires numerical certificates.
 
