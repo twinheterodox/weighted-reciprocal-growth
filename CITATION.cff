@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "Please cite the manuscript when using this result."
-title: "A √3 growth criterion for weighted reciprocal series"
+message: "Please cite the relevant manuscript. The preferred citation is the general-weight paper; the earlier two-weight result is listed under references."
+title: "Growth criteria for weighted reciprocal series"
 authors:
   - name: twinheterodox
 date-released: 2026-11-13
@@ -8,8 +8,18 @@ url: "https://github.com/twinheterodox/weighted-reciprocal-growth"
 license: Apache-2.0
 preferred-citation:
   type: article
-  title: "A √3 growth criterion for weighted reciprocal series"
+  title: "Growth criteria for reciprocal series with nonincreasing weights"
   authors:
     - name: twinheterodox
   year: 2026
-  url: "https://github.com/twinheterodox/weighted-reciprocal-growth"
+  url: "https://github.com/twinheterodox/weighted-reciprocal-growth/blob/main/output/pdf/weighted-family-growth.pdf"
+references:
+  - type: article
+    title: "A √3 growth criterion for weighted reciprocal series"
+    authors:
+      - name: twinheterodox
+    year: 2026
+    date-published: 2026-11-13
+    journal: Hexagon
+    number: "2611.00428v1"
+    url: "https://hexagonmath.org/2611.00428v1"

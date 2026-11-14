@@ -1,0 +1,41 @@
+{
+  "description": "Public summary of cooperating-session reviews, not a verbatim private review archive.",
+  "outcome": "PASS in two complete manuscript-source reviews, with correctness and human exposition assessed separately.",
+  "review_date": "2026-11-13",
+  "reviewed_full_manuscript_sha256": "a2ba5c457feaf89b463f001a2b378952c9e7669a9ec9bf9c633babb29c140627",
+  "reviewed_general_proof_sha256": "523f7d74ba3cd7152569e3f93c2cef2d6ffa094734b90a4adf3346c63ab088f7",
+  "scope": [
+    "Complete theorem statements, including eventual size hypotheses, the strictly increasing corollary and the one-weight case",
+    "Endpoint common denominator, positive cumulative-log filter and its exact identity",
+    "Both tail estimates with constants uniform in moving endpoints",
+    "Rationality-forced jump bound, eventual-fast peaks and the intermittent near/far split",
+    "Prior-source root comparisons, staircase examples, finite-product substitution comparison and attribution",
+    "Human exposition, including motivation and proof transitions"
+  ],
+  "review_receipts": {
+    "session_1_correctness_sha256": "deea7dd14a0042f2df85aea264ddc879feb3d5078cc9454a9715b639b3b696f6",
+    "session_1_exposition_sha256": "521742fe35da6a383cee29d000c7fd5a4318d9e52cbb1fb7ab2e369b3e701ea1",
+    "session_2_correctness_sha256": "3ed9fb5abe07c90554046edb7489a6c85243ae95891fdbdee846417cd8ae9c7b",
+    "session_2_exposition_sha256": "d893e71586c6c53778c8cb69fc242e21a9d20f7a5fff6394f9be123b3cd16433"
+  },
+  "subsequent_editorial_changes": [
+    "Moved the finite-product interpretation before its proof; both cooperating sessions confirmed the finite source diff.",
+    "Removed the forced title line break.",
+    "Replaced the earlier-paper repository citation with its full published Hexagon 2611.00428v1 citation."
+  ],
+  "current_manuscript": {
+    "source": "paper/weighted-family-growth.tex",
+    "source_sha256": "4340714ad4aa6841cd9f2921fe9c178dd6d68ef9ffd2e4f43e74d2006151d113",
+    "pdf": "output/pdf/weighted-family-growth.pdf",
+    "pdf_sha256": "26eca1be56ae4276f970bcd76c7edc1d053eb22ffc063960745180a87c7304e5",
+    "pages": 9,
+    "assembly_checks": "The exact final source diff and all nine rendered pages were checked. The final title/citation revision leaves the mathematical body byte-identical to the peer-confirmed version. The build has no warnings or unresolved references."
+  },
+  "limits": [
+    "Cooperating-session mathematical review, not a fresh external independent audit",
+    "Not formal verification",
+    "Not an exhaustive priority assessment or a sharpness claim",
+    "The independent audit of the earlier two-weight paper is not an audit of this general theorem"
+  ],
+  "numerical_dependencies": "None: the proof is self-contained and has no finite numerical certificate inputs."
+}

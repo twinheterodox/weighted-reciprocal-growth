@@ -1,0 +1,618 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype,booktabs}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{
+  pdftitle={Growth criteria for reciprocal series with nonincreasing weights},
+  pdfauthor={twinheterodox},
+  pdfsubject={Irrationality of weighted reciprocal series under irregular growth},
+  pdfcreator={LaTeX}
+}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\numberwithin{equation}{section}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\N}{\mathbb N}
+\newcommand{\bw}{\mathbf w}
+\title{Growth criteria for reciprocal series with nonincreasing weights}
+\author{twinheterodox\\[2pt]\normalsize Prepared with Codex}
+\date{13 November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Fix nonincreasing positive integer weights $w_0,\ldots,w_{d-1}$.
+Define $c>1$ by
+\[
+  (c-1)^2\sum_{j=0}^{d-1}w_jc^j=w_0.
+\]
+If the total weight is at least two, we prove irrationality of
+$\sum_{n\ge1}1/(a_n^{w_0}\cdots a_{n+d-1}^{w_{d-1}})$ whenever the
+positive integers $a_n$ are strictly increasing and
+\mbox{$\limsup_{n\to\infty}(\log a_n)/c^n=\infty$}.
+For every nonconstant nonincreasing weight profile, this lowers the
+sufficient base in the general criterion of Barreto, Kang, Kim,
+Kova\v{c} and Zhang \cite[Theorem~3]{BKKKZ}, with the classical
+base-$2$ criterion included in the comparison.
+For weights $(3,2,1)$ the base becomes $\sqrt[3]{4}$;
+staircase weights $(d,d-1,\ldots,1)$ give $(d+1)^{1/d}$.
+Irregular growth is allowed. A more general form permits nondecreasing
+sequences and positive integer numerators under polynomial size bounds.
+\end{abstract}
+
+\section{Introduction}
+
+Growth criteria for irrationality apply to families of reciprocal sums
+without requiring a closed form for the sum or information about the
+prime factors of the denominators. Their arithmetic starting point is
+simple: if the whole sum were rational, a positive tail could not become
+arbitrarily small after clearing the preceding partial sum. For products
+of overlapping sequence terms, the powers needed to clear that partial
+sum depend on the position of each factor. Keeping this dependence
+improves the growth condition.
+
+Barreto, Kang, Kim, Kova\v{c} and Zhang \cite{BKKKZ} answered a question
+of Erd\H{o}s and Graham \cite[p.~64]{ErdosGraham} about reciprocal
+products of consecutive terms and established criteria for general
+weight profiles. Their sufficient conditions and rational constructions
+leave a gap for many profiles with repeated factors
+\cite[Section~5]{BKKKZ}. An earlier paper \cite{Earlier} improved their
+sufficient base from $2$ to $\sqrt3$ for weights $(2,1)$.
+Here we extend the endpoint argument to every nonincreasing positive
+weight profile. A positive combination of cumulative logarithms is
+what makes the extension work for irregular growth.
+
+\subsection{The result}
+
+Throughout the paper, $d\ge1$ and
+\begin{equation}\label{eq:weights}
+  w_0\ge w_1\ge\cdots\ge w_{d-1}\ge1
+\end{equation}
+are fixed integers. Write $s=\sum_{j=0}^{d-1}w_j$ and
+$f_{\bw}(x)=\sum_{j=0}^{d-1}w_jx^j$. Define $c=c_{\bw}>1$ by
+\begin{equation}\label{eq:root}
+  (c-1)^2 f_{\bw}(c)=w_0.
+\end{equation}
+The left-hand side is strictly increasing from zero to infinity for
+$c>1$, so the definition is unambiguous. All logarithms are natural.
+
+\begin{theorem}\label{thm:strict}
+Suppose $s\ge2$. If $(a_n)_{n\ge1}$ is a strictly increasing sequence
+of positive integers and
+\begin{equation}\label{eq:growth}
+  \limsup_{n\to\infty}\frac{\log a_n}{c^n}=\infty,
+\end{equation}
+then
+\begin{equation}\label{eq:unitseries}
+  \sum_{n=1}^{\infty}
+  \frac{1}{a_n^{w_0}a_{n+1}^{w_1}\cdots a_{n+d-1}^{w_{d-1}}}
+\end{equation}
+is irrational.
+\end{theorem}
+
+Condition~\eqref{eq:growth} is equivalent to
+$\limsup a_n^{1/c^n}=\infty$. It permits slow stretches and abrupt
+jumps: no ratio limit for successive logarithms is assumed.
+We prove the following form, which also permits repetitions and
+positive integer numerators.
+
+\begin{theorem}\label{thm:general}
+Let $(a_n)$ be nondecreasing positive integers and $(b_n)$ positive
+integers. Suppose that, for some real numbers $0\le\eta<\tau$,
+\begin{equation}\label{eq:size}
+  b_n\le n^\eta,\qquad
+  x_n:=\prod_{j=0}^{d-1}a_{n+j}^{w_j}\ge n^{1+\tau}
+\end{equation}
+for all sufficiently large $n$. If \eqref{eq:growth} holds, then the
+convergent series $\sum_{n\ge1}b_n/x_n$ is irrational.
+\end{theorem}
+
+For Theorem~\ref{thm:strict}, take $b_n=1$, $\eta=0$ and $\tau=s-1$,
+using $a_n\ge n$. The case $d=1,w_0=1$ has $c=2$ and retains the
+size hypothesis in Theorem~\ref{thm:general}; strict increase alone is
+not substituted for that hypothesis. The polynomial bounds in
+\eqref{eq:size} control tails where the sequence grows slowly.
+
+\subsection{What improves}
+
+Let $\rho_{\bw}$ be the positive root used in
+\cite[Theorem~3]{BKKKZ}. For the profiles \eqref{eq:weights}, it solves
+\begin{equation}\label{eq:oldroot}
+  (x-1)f_{\bw}(x)-w_0x^{d-1}=0.
+\end{equation}
+The classical base-$2$ criterion of Erd\H{o}s \cite[Theorem~1]{Erdos1975}
+also applies to the integer product denominators with unit numerators;
+the same fallback for the general setting follows from
+\cite[Theorem~3, $d=1$]{BKKKZ}. Thus the relevant comparison is with
+$\min(\rho_{\bw},2)$, as emphasized in \cite[Remark~4(4)]{BKKKZ}.
+We prove in Proposition~\ref{prop:roots} that
+\begin{equation}\label{eq:improvement}
+  c_{\bw}<\min(\rho_{\bw},2)
+\end{equation}
+for every nonconstant profile satisfying \eqref{eq:weights}.
+Constant profiles recover the earlier base.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{lcc}
+\toprule
+Weights & Base from \cite{BKKKZ} & Base in this paper\\
+\midrule
+$(2,1)$ & $2$ & $\sqrt3$\\
+$(3,2)$ & $(1+\sqrt7)/2$ & $(1+\sqrt{33})/4$\\
+$(3,2,1)$ & $2$ & $\sqrt[3]{4}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The first row recovers \cite{Earlier}, as do the profiles $(2k,k)$
+after replacing $a_n$ by $a_n^k$. For staircase weights
+$(d,d-1,\ldots,1)$, equation~\eqref{eq:root} reduces to
+\begin{equation}\label{eq:staircase}
+  c=(d+1)^{1/d}.
+\end{equation}
+For example, $a_n=\lceil\exp((8/5)^n)\rceil$ is covered for weights
+$(3,2,1)$ because $8/5>\sqrt[3]{4}$, while $(\log a_n)/2^n\to0$.
+More generally, any regular growth rate $\log a_n\sim\theta^n$ with
+$c_{\bw}<\theta<\min(\rho_{\bw},2)$ distinguishes the two criteria.
+These examples illustrate the improvement; the theorem does not
+require regular growth. The optimal thresholds remain open in general.
+
+\subsection{Why the endpoint matters}
+
+For weights $(3,2,1)$, the first $N$ terms are cleared by
+\[
+  D_N=\left(\prod_{i=1}^{N}a_i^3\right)a_{N+1}^2a_{N+2}.
+\]
+The last two factors need powers two and one, respectively, rather
+than three. With $u_n=\log a_n$ and $V_N=\sum_{i=1}^N u_i$, this gives
+\[
+  \log\frac{D_N}{a_{N+1}^3a_{N+2}^2a_{N+3}}
+  =4V_N-V_{N+3}.
+\]
+The recurrence $V_{N+3}=4V_N$ explains the cube-root base. The harder
+question is whether the saving persists for the entire tail when
+growth is irregular. For general nonincreasing weights, we construct
+a positive combination $W_N$ of $V_N,\ldots,V_{N+d-1}$ for which the
+same comparison becomes $cW_N-W_{N+1}$. A carefully selected first
+peak then controls the near tail, and a later large term controls the
+far tail using the same denominator.
+
+We adapt the positive-integer tail argument, uniform tail estimates,
+peak selection and fast/slow splitting in
+\cite[Lemmas~8--10 and Proposition~12]{BKKKZ}, whose antecedents include
+Erd\H{o}s's arguments \cite[pp.~3--6]{Erdos1975}.
+The endpoint refinement and cumulative-log approach for $(2,1)$
+come from \cite{Earlier}. The new ingredient is the positive
+factorization for every profile \eqref{eq:weights}, together with
+control of its forward shifts at the last slow index.
+The proof below supplies all required estimates.
+
+\section{Uniform tail estimates}\label{sec:tails}
+
+We need one estimate valid under polynomial growth and a sharper one
+on intervals of exponential growth. Both intervals will move during
+the proof, so their constants must be independent of the endpoints.
+These are the relevant forms of \cite[Lemma~10]{BKKKZ}.
+
+\begin{lemma}\label{lem:tails}
+Let $(x_n)$ be nondecreasing positive real numbers, and fix
+$0\le\eta<\tau$. Let $A$ be a positive integer and suppose
+$0\le y_n\le n^\eta$ on the indices being summed.
+\begin{enumerate}
+\item If $x_n\ge n^{1+\tau}$ for all $n\ge A$, then
+\begin{equation}\label{eq:polytail}
+  \sum_{n\ge A}\frac{y_n}{x_n}
+  \le C_{\mathrm{pol}}x_A^{-\alpha},
+  \qquad \alpha=\frac{\tau-\eta}{1+\tau}>0.
+\end{equation}
+Here $C_{\mathrm{pol}}$ depends only on $\eta,\tau$.
+\item If $x_n\ge e^n$ for $A\le n\le B$, where $B\ge A$ is an integer
+or $B=\infty$, then
+\begin{equation}\label{eq:exptail}
+  \sum_{n=A}^{B}\frac{y_n}{x_n}
+  \le C_{\mathrm{exp}}\frac{(\log x_A)^{1+\eta}}{x_A}.
+\end{equation}
+Here $C_{\mathrm{exp}}$ depends only on $\eta$.
+\end{enumerate}
+Neither constant depends on the endpoints or on the sequences. No
+numerator bound before $A$ is required.
+\end{lemma}
+
+\begin{proof}
+Put $X=x_A$ and group indices by $2^jX\le x_n<2^{j+1}X$, $j\ge0$.
+In the first case every index in the $j$th group is at most
+$(2^{j+1}X)^{1/(1+\tau)}$. Summing $n^\eta$ up to that bound shows
+that the group's contribution is at most
+\[
+  C\,\frac{(2^{j+1}X)^{(1+\eta)/(1+\tau)}}{2^jX}
+  \le C'X^{-\alpha}2^{-\alpha j}.
+\]
+The geometric series converges, proving \eqref{eq:polytail}.
+In the second case, every index in the $j$th group is at most
+$\log X+(j+1)\log2$. Its contribution is at most
+\[
+  C\,\frac{(\log X+j+1)^{1+\eta}}{2^jX}.
+\]
+Since $\log X\ge A\ge1$, summing over $j$ proves
+\eqref{eq:exptail}. The same estimate applies if a finite interval
+ends partway through a group.
+\end{proof}
+
+\section{Proof of the irrationality criterion}\label{sec:proof}
+
+\subsection{Endpoint clearing and a positive combination}
+
+Retain $x_n$ from \eqref{eq:size}, and put $u_n=\log a_n$, $V_0=0$,
+$V_N=\sum_{i=1}^N u_i$. For $N\ge1$, define
+\begin{equation}\label{eq:clearer}
+  D_N=\left(\prod_{i=1}^{N}a_i^{w_0}\right)
+          \prod_{r=1}^{d-1}a_{N+r}^{w_r},\qquad
+  E_N=\log D_N,\qquad F_N=\log x_{N+1}.
+\end{equation}
+The integer $D_N$ clears every term through $N$. Factors of index at
+most $N$ are allotted the largest weight $w_0$. At index $N+r>N$,
+an earlier term can use only a weight $w_j$ with $j\ge r$, hence
+$w_j\le w_r$. Thus divisibility holds even when some $a_i$ coincide
+or share prime factors. We do not claim that $D_N$ is reduced.
+
+Set $w_d=0$ and
+\[
+  \lambda_r=w_{r-1}-w_r\quad(1\le r\le d).
+\]
+Then $\lambda_r\ge0$, $\lambda_d=w_{d-1}>0$, and direct subtraction
+gives
+\begin{align}
+  E_N-F_N&=w_0V_N-\sum_{r=1}^d\lambda_r u_{N+r},
+       \label{eq:endpoint}\\
+  E_{N+1}-E_N&=\sum_{r=1}^d\lambda_r u_{N+r}\le F_N.
+       \label{eq:increment}
+\end{align}
+To use \eqref{eq:endpoint} at peaks, we need a positive combination
+of cumulative logarithms. Introduce
+\[
+  q_{\bw}(x)=(x-1)\sum_{r=1}^d\lambda_r x^{r-1}-w_0.
+\]
+The identity
+\begin{equation}\label{eq:rootidentity}
+  xq_{\bw}(x)=(x-1)^2f_{\bw}(x)-w_0
+\end{equation}
+shows that $q_{\bw}(c)=0$ for the base in \eqref{eq:root}.
+Division by this root has a useful sign property:
+\begin{equation}\label{eq:filter}
+\begin{split}
+  q_{\bw}(x)&=(x-c)H(x),\\
+  H(x)&=\sum_{r=1}^d\lambda_r\left[
+    x^{r-1}+(c-1)\sum_{k=0}^{r-2}c^{r-2-k}x^k\right]
+       =\sum_{j=0}^{d-1}h_jx^j.
+\end{split}
+\end{equation}
+The inner sum is empty for $r=1$. To verify the formula, subtract
+the value at $c$ from each $(x-1)x^{r-1}$, divide by $x-c$, and use
+$q_{\bw}(c)=0$. Every $h_j$ is positive: the term with $r=d$ supplies
+all lower degrees, and $h_{d-1}=\lambda_d=w_{d-1}>0$.
+For $d=1$ the formula simply gives $H=w_0$.
+
+Define
+\begin{equation}\label{eq:WZ}
+  W_N=\sum_{j=0}^{d-1}h_jV_{N+j},\qquad Z_N=\frac{W_N}{c^N}.
+\end{equation}
+Substituting $u_{N+r}=V_{N+r}-V_{N+r-1}$ in
+\eqref{eq:endpoint} and using \eqref{eq:filter} gives the exact identity
+\begin{equation}\label{eq:positive}
+  E_N-F_N=cW_N-W_{N+1}.
+\end{equation}
+This identity preserves the endpoint saving and allows us to compare
+positive quantities at successive peaks.
+
+We also need to control the forward shifts in $W_N$. Since all $u_i$
+are nonnegative and $V_i$ is nondecreasing, with $H_*:=\sum_jh_j$,
+\begin{align}
+  w_{d-1}V_{N+d-1}&\le E_N\le w_0V_{N+d-1},\notag\\
+  w_{d-1}V_{N+d-1}&\le W_N\le H_*V_{N+d-1}. \label{eq:compare}
+\end{align}
+For the first line one may also use
+$E_N=\sum_r\lambda_rV_{N+r-1}$.
+Writing $C_E=w_0/w_{d-1}$ and $C_W=H_*/w_{d-1}$, we obtain
+\begin{equation}\label{eq:EW}
+  E_N\le C_EW_N,\qquad W_N\le C_WE_N,\qquad
+  \log x_N\le w_0V_{N+d-1}\le C_EW_N.
+\end{equation}
+These constants depend only on the fixed weights.
+
+\subsection{The jump bound forced by rationality}
+
+Suppose for a contradiction that $S=\sum b_n/x_n=p/q$, where $q$ is a
+positive integer. The series converges by \eqref{eq:size}. Put
+$T_N=\sum_{n>N}b_n/x_n$. Since $D_N$ clears the first $N$ terms and
+the tail is positive, $qD_NT_N$ is a positive integer. Thus
+\begin{equation}\label{eq:integerlower}
+  D_NT_N\ge 1/q \qquad(N\ge1).
+\end{equation}
+This is the elementary criterion in \cite[Lemma~8]{BKKKZ}.
+
+The denominators $x_n$ are nondecreasing. Applying
+\eqref{eq:polytail} to $T_N$ and combining it with
+\eqref{eq:integerlower} yields, for all sufficiently large $N$,
+\[
+  \alpha F_N\le E_N+\log(C_{\mathrm{pol}}q).
+\]
+Monotonicity and \eqref{eq:size} imply $a_n\to\infty$, so $E_N\to\infty$.
+Consequently,
+\begin{equation}\label{eq:jump}
+  F_N\le \frac2\alpha E_N,\qquad
+  E_{N+1}\le A E_N,\qquad A=1+\frac2\alpha
+\end{equation}
+for all large $N$, the second inequality following from
+\eqref{eq:increment}. This coarse bound prevents an uncontrolled jump
+immediately after a slow index under the rationality assumption.
+All constants below may depend on the fixed weights, $\eta,\tau$,
+the sequence and $q$, but not on the indices chosen later.
+
+\subsection{Peaks and eventual exponential growth}
+
+By \eqref{eq:growth} and $h_0>0$, the sequence $Z_N$ is unbounded.
+There are therefore infinitely many indices $Q$ such that
+\begin{equation}\label{eq:globalpeak}
+  Z_Q>(1+Q^{-2})\max(1,Z_1,\ldots,Z_{Q-1}).
+\end{equation}
+Otherwise the successive running maxima would eventually be bounded
+by a fixed constant times
+\begin{equation}\label{eq:peakproduct}
+  \prod_{j\ge1}(1+j^{-2})
+  \le\exp\left(\sum_{j\ge1}j^{-2}\right)\le e^2.
+\end{equation}
+This is the summable-increment peak argument used in
+\cite[Lemma~9]{BKKKZ}. At any such peak, \eqref{eq:positive} gives
+\begin{equation}\label{eq:saving}
+  E_{Q-1}-F_{Q-1}=cW_{Q-1}-W_Q
+       \le-\frac{W_Q}{Q^2+1},\qquad W_Q>c^Q.
+\end{equation}
+
+Suppose first that $a_n\ge e^n$ for every sufficiently large $n$.
+Then $x_n\ge a_n^{w_0}\ge e^n$ there. At large peaks $Q$,
+\eqref{eq:exptail}, \eqref{eq:saving} and \eqref{eq:EW} give
+\[
+  \log(D_{Q-1}T_{Q-1})
+  \le-\frac{W_Q}{Q^2+1}+(1+\eta)\log(C_EW_Q)+O(1).
+\]
+For large $Q$, the right-hand expression is a decreasing function of
+$W_Q$ throughout $W_Q\ge c^Q$. It is therefore at most
+\[
+  -\frac{c^Q}{Q^2+1}+(1+\eta)(Q\log c+\log C_E)+O(1),
+\]
+which tends to minus infinity. This contradicts
+\eqref{eq:integerlower}. Notice that no upper bound on the size of a
+peak was needed in this case.
+
+\subsection{A first peak after a slow index}
+
+It remains to allow $a_n<e^n$ at arbitrarily large indices. Choose $R$
+tending to infinity with
+\begin{equation}\label{eq:mu}
+  \mu_R=\frac{u_R}{c^R}\longrightarrow\infty.
+\end{equation}
+For large $R$ one has $a_R\ge e^R$. Let $P=P(R)<R$ be the last index
+before $R$ with $a_P<e^P$. For every fixed slow index $t$, the selected
+$R$ eventually exceed $t$, and then $P(R)\ge t$. Thus $P(R)\to\infty$,
+and
+\begin{equation}\label{eq:faststretch}
+  a_n\ge e^n\qquad(P<n\le R).
+\end{equation}
+
+The quantity $W_P$ involves cumulative sums as far as $P+d-1$, whose
+size is not supplied by $a_P<e^P$. This is where the jump estimate
+\eqref{eq:jump} is needed. All factors of $D_{P-d+1}$ have index at
+most $P$, so, once $P$ is large enough,
+\[
+  E_{P-d+1}\le w_0V_P\le w_0P u_P<w_0P^2.
+\]
+Applying \eqref{eq:jump} exactly $d-1$ times, and then \eqref{eq:EW}, gives
+\begin{equation}\label{eq:slowcontrol}
+  E_P\le w_0A^{d-1}P^2,\qquad
+  W_P\le C_Ww_0A^{d-1}P^2.
+\end{equation}
+For $d=1$ there are no jump steps. In every case $Z_P<1$ for large $P$.
+
+Put $J=R-d+1$. The last term in $W_J$ gives
+\begin{equation}\label{eq:largeendpoint}
+  Z_J\ge\frac{w_{d-1}u_R}{c^{R-d+1}}
+       =w_{d-1}c^{d-1}\mu_R\longrightarrow\infty.
+\end{equation}
+We have $J>P$ eventually. Indeed, otherwise $P<R\le P+d-1$, so
+$W_P\ge w_{d-1}u_R$. Equation~\eqref{eq:slowcontrol} would imply
+$\mu_R\le CP^2/c^R\to0$, contradicting \eqref{eq:mu}.
+
+Choose the first $Q\in[P+1,J]$ for which
+\begin{equation}\label{eq:firstpeak}
+  Z_Q>(1+Q^{-2})\max(1,Z_P,\ldots,Z_{Q-1}).
+\end{equation}
+It exists for all large $R$: if no such peak occurred, the product
+bound \eqref{eq:peakproduct} would give $Z_J\le e^2$, contrary to
+\eqref{eq:largeendpoint}. Because this is the first peak, all preceding
+running maxima are bounded by $L=e^2$. In particular,
+\begin{equation}\label{eq:beforepeak}
+  E_{Q-1}\le C_E L c^Q,\qquad
+  W_Q>c^Q,\qquad Q\le R-d+1\le R.
+\end{equation}
+Also $Q\to\infty$, since $Q\ge P+1$ and $P\to\infty$.
+The saving \eqref{eq:saving} remains valid because $Q-1\ge P$.
+
+\subsection{Controlling the same cleared tail on both sides}
+
+Split the tail at $R$, retaining one multiplier:
+\begin{equation}\label{eq:split}
+  D_{Q-1}T_{Q-1}
+   =D_{Q-1}\sum_{n=Q}^{R}\frac{b_n}{x_n}+D_{Q-1}T_R.
+\end{equation}
+For the near part, $x_n\ge a_n^{w_0}\ge e^n$ on $Q\le n\le R$.
+Only this first factor is needed; other factors of $x_n$ may lie
+beyond the fast stretch. By \eqref{eq:jump} and \eqref{eq:beforepeak},
+\[
+  F_{Q-1}\le\frac{2C_E L}{\alpha}c^Q.
+\]
+The finite-interval estimate \eqref{eq:exptail} and the saving
+\eqref{eq:saving} now imply
+\begin{align}
+  \log\left(D_{Q-1}\sum_{n=Q}^{R}\frac{b_n}{x_n}\right)
+  &\le E_{Q-1}-F_{Q-1}+(1+\eta)\log F_{Q-1}+O(1)\notag\\
+  &\le-\frac{c^Q}{Q^2+1}+(1+\eta)Q\log c+O(1)
+       \longrightarrow-\infty. \label{eq:near}
+\end{align}
+The constants are independent of $P,Q,R$.
+
+For the far part, monotonicity gives $x_{R+1}\ge a_R^s$.
+Using \eqref{eq:polytail}, \eqref{eq:beforepeak} and \eqref{eq:mu},
+\begin{align}
+  D_{Q-1}T_R
+   &\le C_{\mathrm{pol}}\exp(E_{Q-1}-\alpha\log x_{R+1})\notag\\
+   &\le C_{\mathrm{pol}}\exp(C_E Lc^Q-\alpha s u_R)\notag\\
+   &\le C_{\mathrm{pol}}\exp\bigl((C_E L-\alpha s\mu_R)c^R\bigr)
+        \longrightarrow0. \label{eq:far}
+\end{align}
+Both terms in \eqref{eq:split} tend to zero along the same selected
+indices, contradicting \eqref{eq:integerlower}. This proves
+Theorem~\ref{thm:general} and hence Theorem~\ref{thm:strict}. \qed
+
+\section{Comparison of the growth bases}\label{sec:comparison}
+
+The comparisons below separate the improvement in the sufficient base
+from the question of sharpness. They also show that a natural class of
+product substitutions into the earlier theorem does not recover the
+new base.
+
+\begin{proposition}\label{prop:roots}
+Let $\psi_d>1$ solve $\psi_d^d-\psi_d^{d-1}=1$, and let
+$\rho_{\bw}$ be the root in \eqref{eq:oldroot}.
+For constant profiles, $c_{\bw}=\rho_{\bw}=\psi_d$.
+For nonconstant profiles satisfying \eqref{eq:weights},
+\[
+  \psi_d<c_{\bw}<\min(\rho_{\bw},2).
+\]
+\end{proposition}
+
+\begin{proof}
+Write $T_d(x)=1+x+\cdots+x^{d-1}$. For $x>1$,
+$f_{\bw}(x)/w_0\le T_d(x)$, strictly unless the profile is constant.
+At $x=\psi_d$, one has $(x-1)^2T_d(x)=1$.
+The monotonicity in \eqref{eq:root} therefore gives
+$\psi_d\le c$, with the asserted equality case.
+
+At $c$, the polynomial in \eqref{eq:oldroot} has value
+\[
+  (c-1)f_{\bw}(c)-w_0c^{d-1}
+    =w_0\left(\frac1{c-1}-c^{d-1}\right).
+\]
+It vanishes for constant profiles and is negative otherwise.
+The uniqueness of the source's positive root
+\cite[Remark~4(1)]{BKKKZ} gives the comparison with $\rho_{\bw}$.
+Finally, for $d\ge2$ one has $f_{\bw}(2)>w_0$, hence $c<2$.
+For $d=1$, equation~\eqref{eq:root} gives $c=2$.
+\end{proof}
+
+The rational examples in \cite[Theorem~5]{BKKKZ} are governed by the
+largest positive root $r_{\bw}$ of
+\[
+  (x-1)f_{\bw}(x)-x^{d-1}.
+\]
+Because every weight is at least one, this polynomial is at least
+$x^d-x^{d-1}-1$ for $x>1$. It is strictly larger there if some weight
+exceeds one. Thus $r_{\bw}\le\psi_d\le c$, with $r_{\bw}<\psi_d$
+if a weight exceeds one. When all weights are one, the examples have
+finite $\lim a_n^{1/\psi_d^n}$ and do not meet the infinite-limsup
+hypothesis here. For $(2,1)$ the familiar gap between $\sqrt2$ and
+$\sqrt3$ remains. For $(3,2,1)$ the rational-example polynomial is
+$x^3+x-3$, whereas the sufficient base here is $\sqrt[3]{4}$.
+The present theorem does not close these gaps.
+
+One possible way to apply an earlier criterion is to replace $a_n$
+by a finite product of its shifts. The following comparison treats
+those substitutions explicitly.
+
+\begin{proposition}\label{prop:products}
+Suppose
+\[
+  f_{\bw}(x)=V(x)G(x),\qquad
+  V(x)=\sum_{i=0}^{k-1}v_ix^i,\qquad G(x)=\sum_{j=0}^g q_jx^j,
+\]
+where the coefficients are nonnegative integers,
+$v_0q_0=w_0>0$, $v_{k-1}>0$ and $q_g>0$.
+Let $v_{\max}=\max_i v_i$, and let $\rho_v$ be the sufficient base in
+\cite[Theorem~3]{BKKKZ} for the profile $(v_0,\ldots,v_{k-1})$.
+Then $c_{\bw}\le\rho_v$, with equality only if both $G$ and the
+coefficient profile of $V$ are constant. In particular, the inequality
+is strict for every nonconstant profile $\bw$ satisfying
+\eqref{eq:weights}.
+\end{proposition}
+
+To interpret the factorization, set $y_n=\prod_{j=0}^g a_{n+j}^{q_j}$.
+Then $f_{\bw}=VG$ says exactly that $\prod_i y_{n+i}^{v_i}=x_n$:
+the profile $v$ applied to the derived sequence $y_n$ reproduces the
+original denominators.
+
+\begin{proof}
+At $x=\rho_v$ one has $(x-1)V(x)=v_{\max}x^{k-1}$.
+Since $V(x)\le v_{\max}T_k(x)$ for $x>1$, it follows that
+$x^{k-1}\le x^k-1$, or $(x-1)x^{k-1}\ge1$.
+Consequently,
+\begin{equation}\label{eq:productcomparison}
+  \frac{(\rho_v-1)^2 f_{\bw}(\rho_v)}{w_0}
+   =\bigl((\rho_v-1)\rho_v^{k-1}\bigr)
+       \frac{v_{\max}}{v_0}\frac{G(\rho_v)}{q_0}\ge1.
+\end{equation}
+Monotonicity in \eqref{eq:root} proves $c_{\bw}\le\rho_v$.
+Equality forces $\rho_v=\psi_k$, equality in $V\le v_{\max}T_k$,
+and $G(\rho_v)=q_0$. Hence all $v_i$ are equal and $G$ is constant.
+Conversely those conditions give equality and a constant profile $\bw$.
+\end{proof}
+
+For every fixed $t>1$, the bounds
+\[
+  q_0\log a_n\le\log y_n\le G(1)\log a_{n+g}
+\]
+show that $\limsup(\log y_n)/t^n=\infty$ is equivalent to the same
+condition for $a_n$; the fixed shift changes the normalization by only
+the factor $t^g$. Thus these direct applications of the earlier theorem
+do not recover the smaller sufficient base. This conclusion concerns
+the stated finite product substitutions, not every possible method of
+deciding irrationality for an individual series.
+
+\section*{Verification}
+Two cooperating Codex sessions checked the general proof for correctness
+and exposition. This was not formal verification.
+
+\begin{thebibliography}{9}
+\bibitem{BKKKZ}
+K.~Barreto, J.~Kang, S.-h.~Kim, V.~Kova\v{c} and S.~Zhang,
+\emph{Irrationality of rapidly converging series: A problem of
+Erd\H{o}s and Graham},
+Bull.\ Lond.\ Math.\ Soc.\ \textbf{58} (2026), no.~8, e70457.
+\href{https://doi.org/10.1112/blms.70457}{doi:10.1112/blms.70457}.
+\href{https://arxiv.org/abs/2601.21442v3}{arXiv:2601.21442v3}.
+
+\bibitem{Erdos1975}
+P.~Erd\H{o}s,
+\emph{Some problems and results on the irrationality of the sum of
+infinite series},
+J.\ Math.\ Sci.\ \textbf{10} (1975), 1--7.
+\href{https://www.renyi.hu/~p_erdos/1976-44.pdf}{Full text}.
+
+\bibitem{ErdosGraham}
+P.~Erd\H{o}s and R.~L.~Graham,
+\emph{Old and new problems and results in combinatorial number theory},
+Monographies de L'Enseignement Math\'ematique, vol.~28,
+Universit\'e de Gen\`eve, L'Enseignement Math\'ematique, Geneva, 1980.
+\href{https://mathweb.ucsd.edu/~ronspubs/80_11_number_theory.pdf}{Full text}.
+
+\bibitem{Earlier}
+twinheterodox,
+\emph{A $\sqrt3$ growth criterion for weighted reciprocal series},
+Hexagon preprint, 13 November 2026, 6 pp.
+\href{https://hexagonmath.org/2611.00428v1}{Hexagon 2611.00428v1}.
+\end{thebibliography}
+
+\end{document}
